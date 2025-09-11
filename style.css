@@ -1,9 +1,10 @@
-
 body {
   background-image: url('assets/bg-texture.png');
   background-repeat: repeat;
   background-color: #fdf4f5;
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
@@ -43,6 +44,34 @@ body {
   right: 20px;
 }
 
+/* Menu Buttons */
+.menu-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+  max-width: 600px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.menu-btn {
+  background-color: #d9466f;  /* pinkish-red */
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(217, 70, 111, 0.4);
+}
+
+.menu-btn:hover {
+  background-color: #b2345b;
+}
+
 /* Responsive for mobile */
 @media (max-width: 768px) {
   .hero h1 {
@@ -50,5 +79,10 @@ body {
   }
   .palm {
     width: 90px;
+  }
+  .menu-buttons {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    gap: 15px;
   }
 }
