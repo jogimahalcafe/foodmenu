@@ -84,8 +84,8 @@ body {
     grid-template-columns: 1fr;
     max-width: 320px;
     gap: 15px;
-    .menu-section {
-  max-width: 800px;
+ .menu-section {
+  max-width: 1000px;
   margin: 60px auto;
   padding: 30px 20px;
   background-color: rgba(255, 255, 255, 0.92);
@@ -96,30 +96,47 @@ body {
 .menu-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: #222;
   margin-bottom: 10px;
 }
 
 .menu-description {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #555;
   margin-bottom: 30px;
   line-height: 1.6;
   padding: 0 10px;
 }
 
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
 .menu-category {
-  margin-bottom: 30px;
+  flex: 1 1 45%;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.menu-category.full-width {
+  width: 100%;
+  margin-top: 30px;
 }
 
 .menu-category h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #d9466f;
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
+  border-bottom: 2px solid #f2f2f2;
+  padding-bottom: 6px;
 }
 
 .menu-category ul {
@@ -134,21 +151,26 @@ body {
   border-bottom: 1px dashed #eee;
 }
 
-/* Mobile responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .menu-title {
-    font-size: 1.6rem;
+  .menu-grid {
+    flex-direction: column;
   }
 
-  .menu-description {
-    font-size: 0.95rem;
+  .menu-category {
+    flex: 1 1 100%;
+  }
+
+  .menu-title {
+    font-size: 1.8rem;
   }
 
   .menu-category h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .menu-category li {
     font-size: 0.95rem;
   }
 }
+
