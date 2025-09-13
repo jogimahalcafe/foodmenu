@@ -10,6 +10,13 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* optional smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <section class="hero">
@@ -25,80 +32,89 @@
 
   <!-- Menu Buttons Section -->
   <section class="menu-buttons">
-    <button class="menu-btn">Beverages</button>
+    <!-- Added an ID to beverage button -->
+    <button class="menu-btn" id="beveragesBtn">Beverages</button>
     <button class="menu-btn">Breakfast</button>
-
     <button class="menu-btn">Fast Food</button>
     <button class="menu-btn">Main Course</button>
-
     <button class="menu-btn">Breads</button>
     <button class="menu-btn">Rajasthani Special</button>
   </section>
-  <section class="menu-section">
-  <h2 class="menu-title">House Beverages</h2>
-  <p class="menu-description">
-    Beat the heat with our handpicked selection of refreshing beverages – from traditional lassis to fizzy sodas, creamy shakes, and aromatic teas. Each sip is crafted to cool, energize, and uplift your mood, making every moment flavorful.
-  </p>
 
-  <div class="menu-grid">
-    <!-- Coffee -->
-    <div class="menu-category">
-      <h3>Coffee</h3>
-      <ul>
-        <li>Hot Coffee — ₹40</li>
-        <li>Cold Coffee with Ice Cream — ₹120</li>
-        <li>Cold Coffee without Ice Cream — ₹90</li>
-      </ul>
+  <!-- House Beverages Section -->
+  <section class="menu-section" id="houseBeverages">
+    <h2 class="menu-title">House Beverages</h2>
+    <p class="menu-description">
+      Beat the heat with our handpicked selection of refreshing beverages – from traditional lassis to fizzy sodas, creamy shakes, and aromatic teas. Each sip is crafted to cool, energize, and uplift your mood, making every moment flavorful.
+    </p>
+
+    <div class="menu-grid">
+      <!-- Coffee -->
+      <div class="menu-category">
+        <h3>Coffee</h3>
+        <ul>
+          <li>Hot Coffee — ₹40</li>
+          <li>Cold Coffee with Ice Cream — ₹120</li>
+          <li>Cold Coffee without Ice Cream — ₹90</li>
+        </ul>
+      </div>
+
+      <!-- Tea -->
+      <div class="menu-category">
+        <h3>Tea</h3>
+        <ul>
+          <li>Masala Tea — ₹20</li>
+          <li>Lemon Tea — ₹50</li>
+          <li>Black Tea — ₹60</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Tea -->
-    <div class="menu-category">
-      <h3>Tea</h3>
+    <div class="menu-grid">
+      <!-- Indian Beverages -->
+      <div class="menu-category">
+        <h3>Authentic Indian Beverages</h3>
+        <ul>
+          <li>Butter Milk — ₹60</li>
+          <li>Sweet Lassi — ₹90</li>
+          <li>Dahi Lassi — ₹90</li>
+          <li>Plain Curd — ₹100</li>
+          <li>Dahi Daliya — ₹125</li>
+          <li>Masala Daliya — ₹150</li>
+          <li>Hot Milk — ₹80</li>
+        </ul>
+      </div>
+
+      <!-- Others -->
+      <div class="menu-category">
+        <h3>Others</h3>
+        <ul>
+          <li>Mineral Water — ₹30</li>
+          <li>Fresh Lemon Soda (Sweet & Salt) — ₹120</li>
+          <li>Vanilla Strawberry Shake — ₹150</li>
+          <li>Lemon Water (Sweet & Salt) — ₹100</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Souper Bowl -->
+    <div class="menu-category full-width">
+      <h3>Souper Bowl</h3>
       <ul>
-        <li>Masala Tea — ₹20</li>
-        <li>Lemon Tea — ₹50</li>
-        <li>Black Tea — ₹60</li>
+        <li>Tomato Soup — ₹120</li>
+        <li>Manchow Soup — ₹120</li>
+        <li>Hot & Sour Soup — ₹120</li>
+        <li>Lemon Coriander Soup — ₹120</li>
+        <li>Veg Clear Soup — ₹120</li>
       </ul>
     </div>
-  </div>
+  </section>
 
-  <div class="menu-grid">
-    <!-- Indian Beverages -->
-    <div class="menu-category">
-      <h3>Authentic Indian Beverages</h3>
-      <ul>
-        <li>Butter Milk — ₹60</li>
-        <li>Sweet Lassi — ₹90</li>
-        <li>Dahi Lassi — ₹90</li>
-        <li>Plain Curd — ₹100</li>
-        <li>Dahi Daliya — ₹125</li>
-        <li>Masala Daliya — ₹150</li>
-        <li>Hot Milk — ₹80</li>
-      </ul>
-    </div>
-
-    <!-- Others -->
-    <div class="menu-category">
-      <h3>Others</h3>
-      <ul>
-        <li>Mineral Water — ₹30</li>
-        <li>Fresh Lemon Soda (Sweet & Salt) — ₹120</li>
-        <li>Vanilla Strawberry Shake — ₹150</li>
-        <li>Lemon Water (Sweet & Salt) — ₹100</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Souper Bowl -->
-  <div class="menu-category full-width">
-    <h3>Souper Bowl</h3>
-    <ul>
-      <li>Tomato Soup — ₹120</li>
-      <li>Manchow Soup — ₹120</li>
-      <li>Hot & Sour Soup — ₹120</li>
-      <li>Lemon Coriander Soup — ₹120</li>
-      <li>Veg Clear Soup — ₹120</li>
-    </ul>
-  </div>
-</section>
-
+  <script>
+    // Scroll to House Beverages section when Beverages button clicked
+    document.getElementById('beveragesBtn').addEventListener('click', () => {
+      document.getElementById('houseBeverages').scrollIntoView({behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
