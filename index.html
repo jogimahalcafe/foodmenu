@@ -5,20 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jogimahal Café | Best Café in Ranthambhore</title>
 
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="style.css" />
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
 
   <style>
-    /* Smooth scroll */
     html {
       scroll-behavior: smooth;
+    }
+    body {
+      background-image: url('assets/bg-texture.png');
+      background-repeat: repeat;
+      background-color: #fdf4f5;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #111;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    .palm {
+      position: absolute;
+      bottom: 0;
+      width: 140px;
+      height: auto;
+    }
+    .palm-left { left: 20px; }
+    .palm-right { right: 20px; }
+
+    /* Menu Buttons */
+    .menu-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 30px;
+      max-width: 600px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+    .menu-btn {
+      background-color: #d9466f;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(217, 70, 111, 0.4);
+    }
+    .menu-btn:hover {
+      background-color: #b2345b;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .palm { width: 90px; }
+      .menu-buttons {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        gap: 15px;
+      }
+    }
+
+    /* Menu Section Styling */
+    .menu-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .menu-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    .menu-description {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      padding: 0 10px;
+    }
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .menu-category {
+      flex: 1 1 45%;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .menu-category.full-width {
+      width: 100%;
+      margin-top: 30px;
+    }
+    .menu-category h3 {
+      font-size: 1.4rem;
+      color: #d9466f;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #f2f2f2;
+      padding-bottom: 6px;
+    }
+    .menu-category ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .menu-category li {
+      font-size: 1rem;
+      color: #333;
+      padding: 6px 0;
+      border-bottom: 1px dashed #eee;
+    }
+
+    @media (max-width: 768px) {
+      .menu-grid { flex-direction: column; }
+      .menu-category { flex: 1 1 100%; }
+      .menu-title { font-size: 1.8rem; }
+      .menu-category h3 { font-size: 1.2rem; }
+      .menu-category li { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
+  <!-- Hero -->
   <section class="hero">
     <img src="assets/palm-left.png" class="palm palm-left" alt="Palm Left" />
     <div class="hero-content">
@@ -30,21 +167,14 @@
     <img src="assets/palm-right.png" class="palm palm-right" alt="Palm Right" />
   </section>
 
-  <!-- Menu Buttons Section -->
+  <!-- Menu Buttons -->
   <section class="menu-buttons">
     <button class="menu-btn" id="beveragesBtn">Beverages</button>
     <button class="menu-btn" id="breakfastBtn">Breakfast</button>
-
-    <button class="menu-btn">Fast Food</button>
-    <button class="menu-btn">Main Course</button>
-
-    <button class="menu-btn">Breads</button>
-    <button class="menu-btn">Rajasthani Special</button
-     <button class="menu-btn">Starters & Snacks</button>
-                                       
+    <button class="menu-btn" id="startersBtn">Starters & Snacks</button>
   </section>
 
-  <!-- House Beverages Section -->
+  <!-- Beverages -->
   <section class="menu-section" id="houseBeverages">
     <h2 class="menu-title">House Beverages</h2>
     <p class="menu-description">
@@ -52,7 +182,6 @@
     </p>
 
     <div class="menu-grid">
-      <!-- Coffee -->
       <div class="menu-category">
         <h3>Coffee</h3>
         <ul>
@@ -61,8 +190,6 @@
           <li>Cold Coffee without Ice Cream — ₹90</li>
         </ul>
       </div>
-
-      <!-- Tea -->
       <div class="menu-category">
         <h3>Tea</h3>
         <ul>
@@ -74,7 +201,6 @@
     </div>
 
     <div class="menu-grid">
-      <!-- Indian Beverages -->
       <div class="menu-category">
         <h3>Authentic Indian Beverages</h3>
         <ul>
@@ -87,8 +213,6 @@
           <li>Hot Milk — ₹80</li>
         </ul>
       </div>
-
-      <!-- Others -->
       <div class="menu-category">
         <h3>Others</h3>
         <ul>
@@ -100,7 +224,6 @@
       </div>
     </div>
 
-    <!-- Souper Bowl -->
     <div class="menu-category full-width">
       <h3>Souper Bowl</h3>
       <ul>
@@ -113,81 +236,74 @@
     </div>
   </section>
 
-  <!-- NEW Rise & Dine – Breakfast Menu Section -->
+  <!-- Breakfast -->
   <section class="menu-section" id="breakfastMenu">
     <h2 class="menu-title">Rise & Dine – Breakfast Menu</h2>
-    <p class="menu-description">
-      Bringing the best of Indian breakfasts to your table.
-    </p>
+    <p class="menu-description">Bringing the best of Indian breakfasts to your table.</p>
+    <div class="menu-category full-width">
+      <ul>
+        <li>Bread Butter with Jam (4 Pcs.) — ₹100</li>
+        <li>Bread Toast Butter (4 Pcs.) — ₹150</li>
+        <li>Poha — ₹60</li>
+        <li>Plain Paratha (2 Pcs.) — ₹100</li>
+        <li>Aloo Paratha (2 Pcs.) — ₹120</li>
+        <li>Gobhi Paratha (2 Pcs.) — ₹120</li>
+        <li>Paneer Paratha (2 Pcs.) — ₹160</li>
+        <li>Puri Bhaji (6 Pcs.) — ₹150</li>
+        <li>Chole Bhature — ₹180</li>
+        <li>Upma — ₹150</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Starters & Snacks -->
+  <section class="menu-section" id="startersnacks">
+    <h2 class="menu-title">Kickstart Your Cravings</h2>
+    <p class="menu-description">Your appetite begins here.</p>
 
     <div class="menu-grid">
-      <div class="menu-category full-width">
+      <div class="menu-category">
+        <h3>Starters – A Flavorful Beginning</h3>
         <ul>
-          <li>Bread Butter with Jam (4 Pcs.) — ₹100</li>
-          <li>Bread Toast Butter (4 Pcs.) — ₹150</li>
-          <li>Poha — ₹60</li>
-          <li>Plain Paratha (2 Pcs.) — ₹100</li>
-          <li>Aloo Paratha (2 Pcs.) — ₹120</li>
-          <li>Gobhi Paratha (2 Pcs.) — ₹120</li>
-          <li>Paneer Paratha (2 Pcs.) — ₹160</li>
-          <li>Puri Bhaji (6 Pcs.) — ₹150</li>
-          <li>Chole Bhature — ₹180</li>
-          <li>Upma — ₹150</li>
+          <li>Paneer Tikka (8 Pcs) — ₹400</li>
+          <li>Paneer Malai Tikka (8 Pcs) — ₹400</li>
+          <li>Paneer Peshawari Tikka (8 Pcs) — ₹400</li>
+          <li>Mushroom Tikka — ₹400</li>
+          <li>Stuffed Mushroom Tikka — ₹450</li>
+          <li>Veg Seekh Kabab — ₹400</li>
+          <li>Veg. Seek Kabab — ₹350</li>
+          <li>Tandoori Veg Platter — ₹650</li>
+          <li>Paneer Chat — ₹250</li>
+          <li>Aloo Chat — ₹170</li>
+        </ul>
+      </div>
+      <div class="menu-category">
+        <h3>Snacks – Light Bites, Big Taste</h3>
+        <ul>
+          <li>Paneer Pakoda (8 Pcs) — ₹300</li>
+          <li>Vegetable Pakoda (8 Pcs) — ₹200</li>
+          <li>Aloo Pyaj Pakoda (8 Pcs) — ₹200</li>
+          <li>Veg Burger — ₹150</li>
+          <li>French Fries — ₹180</li>
+          <li>Plain Maggi — ₹120</li>
+          <li>Masala Maggi — ₹180</li>
+          <li>White Sauce Pasta — ₹250</li>
+          <li>Red Sauce Pasta — ₹200</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ✅ New Starters & Snacks Section -->
-<section class="menu-section" id="startersnacks" style="display:none;">
-  <h2 class="menu-title">Kickstart Your Cravings</h2>
-  <p class="menu-description">Your appetite begins here.</p>
-
-  <div class="menu-grid">
-    <!-- Starters -->
-    <div class="menu-category">
-      <h3>Starters – A Flavorful Beginning</h3>
-      <ul>
-        <li>Paneer Tikka (8 Pcs) — ₹400</li>
-        <li>Paneer Malai Tikka (8 Pcs) — ₹400</li>
-        <li>Paneer Peshawari Tikka (8 Pcs) — ₹400</li>
-        <li>Mushroom Tikka — ₹400</li>
-        <li>Stuffed Mushroom Tikka — ₹450</li>
-        <li>Veg Seekh Kabab — ₹400</li>
-        <li>Veg. Seek Kabab — ₹350</li>
-        <li>Tandoori Veg Platter — ₹650</li>
-        <li>Paneer Chat — ₹250</li>
-        <li>Aloo Chat — ₹170</li>
-      </ul>
-    </div>
-
-    <!-- Snacks -->
-    <div class="menu-category">
-      <h3>Snacks – Light Bites, Big Taste</h3>
-      <ul>
-        <li>Paneer Pakoda (8 Pcs) — ₹300</li>
-        <li>Vegetable Pakoda (8 Pcs) — ₹200</li>
-        <li>Aloo Pyaj Pakoda (8 Pcs) — ₹200</li>
-        <li>Veg Burger — ₹150</li>
-        <li>French Fries — ₹180</li>
-        <li>Plain Maggi — ₹120</li>
-        <li>Masala Maggi — ₹180</li>
-        <li>White Sauce Pasta — ₹250</li>
-        <li>Red Sauce Pasta — ₹200</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
   <script>
-    // Scroll to Beverages section
+    // Scroll to sections
     document.getElementById('beveragesBtn').addEventListener('click', function() {
       document.getElementById('houseBeverages').scrollIntoView({ behavior: 'smooth' });
     });
-
-    // Scroll to Breakfast section
     document.getElementById('breakfastBtn').addEventListener('click', function() {
       document.getElementById('breakfastMenu').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('startersBtn').addEventListener('click', function() {
+      document.getElementById('startersnacks').scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
