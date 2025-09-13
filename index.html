@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jogimahal Café | Best Café in Ranthambhore</title>
-  
+
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
-  
+
   <style>
-    /* optional smooth scrolling */
+    /* Smooth scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -32,11 +32,12 @@
 
   <!-- Menu Buttons Section -->
   <section class="menu-buttons">
-    <!-- Added an ID to beverage button -->
     <button class="menu-btn" id="beveragesBtn">Beverages</button>
-    <button class="menu-btn">Breakfast</button>
+    <button class="menu-btn" id="breakfastBtn">Breakfast</button>
+
     <button class="menu-btn">Fast Food</button>
     <button class="menu-btn">Main Course</button>
+
     <button class="menu-btn">Breads</button>
     <button class="menu-btn">Rajasthani Special</button>
   </section>
@@ -110,10 +111,40 @@
     </div>
   </section>
 
+  <!-- NEW Rise & Dine – Breakfast Menu Section -->
+  <section class="menu-section" id="breakfastMenu">
+    <h2 class="menu-title">Rise & Dine – Breakfast Menu</h2>
+    <p class="menu-description">
+      Bringing the best of Indian breakfasts to your table.
+    </p>
+
+    <div class="menu-grid">
+      <div class="menu-category full-width">
+        <ul>
+          <li>Bread Butter with Jam (4 Pcs.) — ₹100</li>
+          <li>Bread Toast Butter (4 Pcs.) — ₹150</li>
+          <li>Poha — ₹60</li>
+          <li>Plain Paratha (2 Pcs.) — ₹100</li>
+          <li>Aloo Paratha (2 Pcs.) — ₹120</li>
+          <li>Gobhi Paratha (2 Pcs.) — ₹120</li>
+          <li>Paneer Paratha (2 Pcs.) — ₹160</li>
+          <li>Puri Bhaji (6 Pcs.) — ₹150</li>
+          <li>Chole Bhature — ₹180</li>
+          <li>Upma — ₹150</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <script>
-    // Scroll to House Beverages section when Beverages button clicked
-    document.getElementById('beveragesBtn').addEventListener('click', () => {
-      document.getElementById('houseBeverages').scrollIntoView({behavior: 'smooth'});
+    // Scroll to Beverages section
+    document.getElementById('beveragesBtn').addEventListener('click', function() {
+      document.getElementById('houseBeverages').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Scroll to Breakfast section
+    document.getElementById('breakfastBtn').addEventListener('click', function() {
+      document.getElementById('breakfastMenu').scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
