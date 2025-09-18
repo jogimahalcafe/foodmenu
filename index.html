@@ -59,9 +59,9 @@
   font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
   color: #444;
-  max-width: 800px;   /* keeps description from stretching too wide */
+  max-width: 100%;   /* let it expand across screen */
   margin: 0 auto;
-  padding: 0 60px;    /* 👈 extra left & right spacing */
+  padding: 0 15px;   /* 👈 very little left/right padding */
   text-align: center;
 }
 
@@ -86,8 +86,8 @@
   }
   .hero-description {
     font-size: 1rem;
-    padding: 0 20px;   /* 👈 side space for description on mobile */
-    max-width: 90%;
+    padding: 0 10px;  /* less padding on small screens */
+    max-width: 100%;
   }
 }
 
