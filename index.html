@@ -50,7 +50,9 @@
   font-weight: bold;
   color: #b30059;
   white-space: nowrap;
-  line-height: 1; /* makes vertical centering clean */
+  line-height: 1;
+  position: relative;
+  top: 15px;  /* 👈 adjust this value until it looks perfect */
 }
 
 
@@ -71,6 +73,7 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
+        top: 10px; /* slightly less push on mobile */
   }
   .palm {
     width: 40px;
