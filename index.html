@@ -55,13 +55,16 @@
   top: 40px;  /* 👈 adjust this value until it looks perfect */
 }
 
-
 .hero-description {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #444;
-  max-width: 600px;
+  max-width: 800px;   /* keeps description from stretching too wide */
+  margin: 0 auto;
+  padding: 0 60px;    /* 👈 extra left & right spacing */
+  text-align: center;
 }
+
 
 /* Palm trees */
 .palm {
@@ -73,7 +76,7 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
-        top: 25px; /* slightly less push on mobile */
+    top: 25px; /* slightly less push on mobile */
   }
   .palm {
     width: 40px;
@@ -81,8 +84,12 @@
   .hero-top {
     gap: 10px;
   }
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 20px;   /* 👈 side space for description on mobile */
+    max-width: 90%;
+  }
 }
-
 
     /* Menu Buttons */
     .menu-buttons {
