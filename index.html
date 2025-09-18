@@ -33,10 +33,15 @@
 
 .hero-top {
   display: flex;
-  align-items: center;
+  align-items: center;   /* centers text vertically with palms */
   justify-content: center;
   gap: 20px;
   margin-bottom: 15px;
+}
+
+.palm {
+  height: 120px; /* adjust palm height as you want */
+  width: auto;
 }
 
 .hero-title {
@@ -45,7 +50,9 @@
   font-weight: bold;
   color: #b30059;
   white-space: nowrap;
+  line-height: 1; /* makes vertical centering clean */
 }
+
 
 .hero-description {
   font-family: "Open Sans", sans-serif;
@@ -100,7 +107,7 @@
       background-color: #b2345b;
     }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hero h1 { font-size: 2rem; }
   .palm { width: 90px; }
   .menu-buttons {
@@ -108,6 +115,7 @@
     max-width: 320px;
     gap: 12px;
   }
+}
 
   .menu-btn {
     padding: 10px 0;
@@ -186,7 +194,7 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
+ <!-- Hero Section -->
 <section class="hero">
   <div class="hero-top">
     <img src="assets/palm-left.png" alt="Palm Tree Left" class="palm" />
