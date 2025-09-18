@@ -21,33 +21,59 @@
       padding: 0;
     }
 
-    /* Hero section */
-    .hero {
-      padding: 100px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #111;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #333;
-      line-height: 1.6;
-    }
-    .palm {
-      position: absolute;
-      bottom: 0;
-      width: 140px;
-      height: auto;
-    }
-    .palm-left { left: 20px; }
-    .palm-right { right: 20px; }
+  /* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffe5ec, #fff);
+  text-align: center;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #b30059;
+  white-space: nowrap;
+}
+
+.hero-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 600px;
+}
+
+/* Palm trees */
+.palm {
+  width: 60px;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .palm {
+    width: 40px;
+  }
+  .hero-top {
+    gap: 10px;
+  }
+}
+
 
     /* Menu Buttons */
     .menu-buttons {
@@ -161,16 +187,14 @@
   </style>
 </head>
 <body>
-  <!-- Hero -->
+  <!-- Hero Section -->
 <section class="hero">
-  <div class="title-wrapper">
-    <img src="assets/palm-left.png" alt="Left Palm" class="palm-image left-palm" />
-    <h1 class="title-text">FINE DINE IN</h1>
-    <img src="assets/palm-right.png" alt="Right Palm" class="palm-image right-palm" />
+  <div class="hero-top">
+    <img src="assets/palm-left.png" alt="Palm Tree Left" class="palm" />
+    <h1 class="hero-title">FINE DINE IN</h1>
+    <img src="assets/palm-right.png" alt="Palm Tree Right" class="palm" />
   </div>
-  <p class="title-description">
-    Welcome to Jogimahal Café, nestled in Ranthambhore’s greenery. Enjoy Indian, Rajasthani, and exotic fast food in a stunning outdoor setting.
-  </p>
+  <p class="hero-description">Tantalize your taste buds with our specialties</p>
 </section>
   <!-- Menu Buttons -->
   <section class="menu-buttons">
