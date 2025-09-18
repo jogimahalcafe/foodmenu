@@ -20,6 +20,13 @@
       margin: 0;
       padding: 0;
     }
+/* Hero Image */
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
 
   /* Hero Section */
 .hero {
@@ -205,6 +212,15 @@
 </head>
 <body>
  <!-- Hero Section -->
+   <!-- Responsive Hero Image -->
+  <picture>
+    <!-- Mobile version -->
+    <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp" type="image/webp">
+    <!-- Desktop version -->
+    <source media="(min-width: 769px)" srcset="assets/hero-desktop.webp" type="image/webp">
+    <!-- Fallback JPG -->
+    <img src="assets/hero-desktop.jpg" alt="Hero Banner" class="hero-image">
+  </picture>
 <section class="hero">
   <div class="hero-top">
     <img src="assets/palm-left.png" alt="Palm Tree Left" class="palm" />
