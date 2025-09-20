@@ -140,7 +140,16 @@
     border-radius: 6px;
       }
     }
+section-image-wrapper {
+  text-align: center;   /* center all images */
+  margin-top: 20px;
+}
 
+.section-image {
+  width: 100%;          /* makes it responsive */
+  max-width: 1000px;    /* optional: prevents huge images from being too wide */
+  height: auto;         /* keeps aspect ratio */
+}
     /* Menu Section Styling */
     .menu-section {
       max-width: 1000px;
@@ -249,6 +258,11 @@
     <p class="menu-description">
       Beat the heat with our handpicked selection of refreshing beverages – from traditional lassis to fizzy sodas, creamy shakes, and aromatic teas. Each sip is crafted to cool, energize, and uplift your mood, making every moment flavorful.
     </p>
+    <!-- Section Image -->
+  <div class="section-image-wrapper">
+    <img src="assets/beverages.png" alt="House Beverages" class="section-image">
+  </div>
+</section>
 
     <div class="menu-grid">
       <div class="menu-category">
