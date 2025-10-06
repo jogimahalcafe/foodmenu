@@ -48,3 +48,7 @@
     gap: 8px;
   }
 }
+/* Only pizza item names bold */
+.pizza-menu .item-name {
+  font-weight: bold;
+}
